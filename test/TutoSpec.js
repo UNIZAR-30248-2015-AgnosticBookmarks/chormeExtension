@@ -1,9 +1,10 @@
 process.env.NODE_ENV = 'test'; 
 var request = require('request');
-var global.chrome = require('sinon-chrome');
-var popup = require('../scr/popup.js');
+var chrome = require('sinon-chrome');
 
 describe("Chrome extension tutorial", function() {
+	
+
 
     describe("GET /", function() {
 
@@ -13,26 +14,28 @@ describe("Chrome extension tutorial", function() {
 			var tabsNumber;
 			var done = false;  
             var timeout = 750
+			var n=0;
 
-            runs(function() {
-                
-				popup.getCurrentTabSize(function(tabs){
-					tabsNumber = tabs;
+			chrome.tabs.query({}, function(tabs) {
+					n=tabs.length;
 					done = true;
-				}); 
+					expect(tabs.length).toBe(3);
+				});
 				
-            });
+				
+            
 
             waitsFor(function() {
                 return done;
             }, "response", timeout);
 
             runs(function() {
-                expect(tabsNumber).toBe(3);
+                expect(n).toBe(3);
             });
             
         });
     });
+	
 
 });
 

@@ -1,5 +1,5 @@
 {
-  "name": "agnostic-bookmarks chrome extension",
+  "name": "chromeExtension",
   "version": "0.0.1",
   "description": "Chrome extension for agnostic-bookmarks",
   "main": "index.js",
@@ -41,6 +41,7 @@
     "istanbul": "^0.4.0",
     "jasmine": "^2.3.2",
     "jasmine-node": "^1.14.5",
-    "request": "^2.65.0"
+    "request": "^2.65.0",
+    "sinon-chrome": "^1.0.2"
   }
 }
