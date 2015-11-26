@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 Vim swp files
-=======
-# Vim swp files
->>>>>>> origin/tutorial
+
 *.swp
 # Logs
 logs
@@ -42,8 +40,6 @@ public/dist
 .travis/travis_rsa
 
 # Properties file
-<<<<<<< HEAD
+
 app/config.js
-=======
-app/config.js
->>>>>>> origin/tutorial
+
