@@ -1,19 +1,16 @@
 {
-  "name": "Agnostic-Bookmarks Chrome Extension",
-  "description": "This is the Chrome extension for the Agnostic-Bookmarks app",
-  "version": "1.0",
   "manifest_version": 2,
-  "icons": {
-  "128": "icon.png"
-  },
-  "app": {
-  "background": {
-  "scripts": ["app/app.js"]
-  }
+  "name": "Agnostic Bookmarks Chorme extension",
+  "description": "Agnostic Bookmarks Chrome extension",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_popup": "public/popup.html"
   },
   "permissions": [
-  "https://ssl.gstatic.com/",
-  "https://www.googleapis.com/",
-  "https://accounts.google.com/"
+    "activeTab",
+    "tabs",
+    "https://ajax.googleapis.com/"
   ]
 }
