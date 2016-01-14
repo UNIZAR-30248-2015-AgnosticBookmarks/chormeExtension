@@ -1,14 +1,21 @@
 <html>
 <head>
     <title>Aggnostic Bookmarks Chrome Extension</title>
-	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="../app/popup.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    
 </head>
 <body>
 
-<div id="info"></div>
-<form>
-    Bookmark Name:<br>
+    <ul id="logIn">  
+        <li><label for="usermail">UserName</label>  
+        <input type="email" id="userLogin"></li>  
+        <li><label for="password">Password</label>  
+        <input type="password" id="pass"></li>  
+        <li>  
+        <input type="submit" id="loginBtn" value="LogIn"></li>  
+    </ul>  
+    
+	Bookmark Name:<br>
     <input id="name" type="text" name="name">
     <br>
     Bookmark URL:<br>
@@ -17,9 +24,12 @@
     <input id="tags" type="text" name="tags">
     Bookmark Description:<br>
     <input id="desc" type="desc" name="desc">
-    <br><br>
-    <input type="submit" value="add">
-</form>
+	<button type="button" id="add">Add</button>
+	
+	
+<p id=notLogged>You must be logged before add a bookmark <br>
+If you do not have an account please <a href="http://adriemsworkshop.noip.me:8081/bookmarks/#/access">Register</a></p>
 
 </body>
+<script src="../app/popup.js"></script>
 </html>
