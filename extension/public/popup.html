@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Aggnostic Bookmarks Chrome Extension</title>
@@ -6,9 +7,14 @@
 </head>
 <body>
 
+	<div id="logOut" hidden>
+		<p id="loggedAs"></p>
+		<input type="submit" id="logoutBtn" value="LogOut"><br>  
+	</div>
+
     <ul id="logIn">  
-        <li><label for="usermail">UserName</label>  
-        <input type="email" id="userLogin"></li>  
+        <li><label for="userName">UserName</label>  
+        <input id="userLogin"></li>  
         <li><label for="password">Password</label>  
         <input type="password" id="pass"></li>  
         <li>  
@@ -25,11 +31,14 @@
     <input id="tags" type="text" name="tags">
     Bookmark Description:<br>
     <input id="desc" type="desc" name="desc">
-	<button type="button" id="add">Add</button>
+	<button type="button" id="add">Add</button> <button type="button" id="delete" hidden>Delete</button>
+	
+	<p id="actionDone" hidden></p>
+
 	
 	
 <p id=notLogged>You must be logged before add a bookmark <br>
-If you do not have an account please <a href="http://adriemsworkshop.noip.me:8081/bookmarks/#/access">Register</a></p>
+If you do not have an account please <br><button type="button" id="reg">Register</button>
 
 </body>
 <script src="../app/popup.js"></script>
