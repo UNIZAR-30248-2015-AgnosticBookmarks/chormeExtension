@@ -1,4 +1,4 @@
-var found = false;
+var found = true;
 var user = "";
 
 //Code And Encode B64
@@ -8,6 +8,9 @@ var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456
 function logIn(){
 
 	user = Base64.encode($('#userLogin').val() + ":" + $('#pass').val());
+	user = "";
+	//if logIn Error
+	$('#logInError').show();
 	startApp();
 }
 
@@ -70,13 +73,6 @@ function startApp(){
 		$('#notLogged').show();
 	}
 	
-	if(found){
-		$('#add').html("Edit");
-	}
-	else{
-		$('#add').html("Add");
-	}
-
     getCurrentTabInfo(function(url,name) {
 
         fillInfo(url,name);
@@ -84,6 +80,14 @@ function startApp(){
     }, function(errorMessage) {
         renderStatus(errorMessage);
     });
+	
+		if(found){
+		$('#add').html("Edit");
+	}
+	else{
+		$('#add').html("Add");
+	}
+
 }
 
 $("#add").click(add);
