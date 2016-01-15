@@ -212,7 +212,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	chrome.storage.sync.get(['userName','encode'], function(result){
         userName = result.userName;
 		user = result.encode;
-		if(userName === "null"){ loged = false;}
+		console.log(userName);
+		if(userName === "null" || userName == "undefined"){ loged = false;}
 		else {
 			loged = true;
 		}
