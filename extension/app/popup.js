@@ -23,8 +23,8 @@ function logIn(){
 	$.getJSON('http://adriemsworkshop.noip.me:8081/bookmarks/api/auth')
 		.success(function() {
 			loged=true;
-			chrome.storage.local.set({'encode': user});
-			chrome.storage.local.set({'userName': userName});
+			chrome.storage.sync.set({'encode': user});
+			chrome.storage.sync.set({'userName': userName});
 			fillInfo(url,name);
 			})
 		.error(function() {
@@ -36,8 +36,8 @@ function logOut(){
 	loged = false;
 	url = "";
 	name = "";
-	chrome.storage.local.set({'encode': "null"});
-	chrome.storage.local.set({'userName': "null"});
+	chrome.storage.sync.set({'encode': "null"});
+	chrome.storage.sync.set({'userName': "null"});
 	startApp();
 }
 
@@ -218,16 +218,14 @@ function redirect(){
 document.addEventListener('DOMContentLoaded', function() {
 	
 	
-	chrome.storage.local.get('userName', function(result){
+	chrome.storage.sync.get(['userName','encode'], function(result){
         userName = result.userName;
-		if(userName === "null") loged = false;
+		user = result.encode;
+		if(userName === "null"){ loged = false;}
+		else {
+			loged = true;
+		}
     });
-	
-	chrome.storage.local.get('encode', function(result){
-        user = result.encode;
-		
-    });
-
 	
 	getCurrentTabInfo(function(urlG,nameG) {
 
