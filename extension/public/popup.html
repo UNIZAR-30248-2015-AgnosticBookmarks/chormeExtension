@@ -2,23 +2,22 @@
 <html>
 <head>
     <title>Aggnostic Bookmarks Chrome Extension</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script
     
 </head>
 <body>
-
+ <div class="container">
 	<div id="logOut" hidden>
 		<p id="loggedAs"></p>
 		<input type="submit" id="logoutBtn" value="LogOut"><br>  
 	</div>
 
     <ul id="logIn">  
-        <li><label for="userName">UserName</label>  
-        <input id="userLogin"></li>  
-        <li><label for="password">Password</label>  
-        <input type="password" id="pass"></li>  
-        <li>  
-        <input type="submit" id="loginBtn" value="LogIn"></li>  
+        <label for="userName">UserName</label>  
+        <input id="userLogin"> 
+        <label for="password">Password</label>  
+        <input type="password" id="pass">
+        <input type="submit" id="loginBtn" value="LogIn"> 
 		<p id=logInError hidden>Username or password not valid.</p>
     </ul>  
     
@@ -34,10 +33,10 @@
 	<button type="button" id="add">Add</button> <button type="button" id="delete" hidden>Delete</button>
 	
 	<p id="actionDone" hidden></p>
-
+</div>
 	
 	
-<p id=notLogged>You must be logged before add a bookmark <br>
+<p id=notLogged >You must be logged before add a bookmark <br>
 If you do not have an account please <br><button type="button" id="reg">Register</button>
 
 </body>
