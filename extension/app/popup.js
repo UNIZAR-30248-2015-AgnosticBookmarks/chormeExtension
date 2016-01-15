@@ -45,7 +45,7 @@ function addBtn() {
 	if(loged){
 		
 		var tags = $('#tags').val();
-		var arr = "";
+		var arr = [];
 		if(!(tags === "") ){
 			arr = tags.split(",");
 		}
@@ -56,6 +56,8 @@ function addBtn() {
             tags: arr,
             description: $('#desc').val()
         };
+		
+		console.log(_bookmark);
 		
 		$.ajaxSetup({
 			headers : {
